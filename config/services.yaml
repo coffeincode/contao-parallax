@@ -3,9 +3,9 @@ services:
     autowire: true
     autoconfigure: true
 
-Hypergalaktisch\ContaoParallax\:
+Hypergalaktisch\ParallaxBundle\:
   resource: '../src/*'
-  exclude: '../src/{ContaoManager,DependencyInjection,Entity,Migrations,Tests,Kernel.php, HypergalaktischContaoParallaxBundle.php}'
+  exclude: '../src/{ContaoManager,DependencyInjection,Entity,Migrations,Tests,Kernel.php,HypergalaktischParallaxBundle.php}'
 
 Hypergalaktisch\ParallaxBundle\EventListener\HookListener:
   tags:
