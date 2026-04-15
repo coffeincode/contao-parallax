@@ -9,23 +9,15 @@
 
 namespace Hypergalaktisch\ParallaxBundle\EventListener;
 
-use Contao\CoreBundle\Framework\ContaoFrameworkInterface;
+use Contao\CoreBundle\Framework\ContaoFramework;
 use Contao\FilesModel;
 use Contao\StringUtil;
 
 class HookListener
 {
-    /**
-     * @var ContaoFrameworkInterface
-     */
-    private $framework;
+    private ContaoFramework $framework;
 
-    /**
-     * Constructor.
-     *
-     * @param ContaoFrameworkInterface $framework
-     */
-    public function __construct(ContaoFrameworkInterface $framework)
+    public function __construct(ContaoFramework $framework)
     {
         $this->framework = $framework;
     }
