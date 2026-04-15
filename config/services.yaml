@@ -3,7 +3,7 @@ services:
     autowire: true
     autoconfigure: true
 
-Hypergalaktisch\ContaoParallaxBundle\:
+Hypergalaktisch\ContaoParallax\:
   resource: '../src/*'
   exclude: '../src/{ContaoManager,DependencyInjection,Entity,Migrations,Tests,Kernel.php, HypergalaktischContaoParallaxBundle.php}'
 
