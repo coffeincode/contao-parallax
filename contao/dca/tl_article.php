@@ -7,6 +7,9 @@
  * @see	       https://github.com/hypergalaktisch/contao-parallax
  */
 
+use Contao\BackendUser;
+use Contao\System;
+
 System::loadLanguageFile('tl_content');
 
 $GLOBALS['TL_DCA']['tl_article']['palettes']['__selector__'][] = 'xlParallaxAddImage';
