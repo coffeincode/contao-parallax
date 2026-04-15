@@ -11,10 +11,10 @@ namespace Hypergalaktisch\ParallaxBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class HypergalaktischParallaxExtension extends Extension
+class HypergalaktischParallaxExtension extends ExtensionInterface
 {
     /**
      * {@inheritdoc}

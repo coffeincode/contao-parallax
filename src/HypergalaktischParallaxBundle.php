@@ -42,3 +42,8 @@ class HypergalaktischParallaxBundle extends AbstractBundle
         return new HypergalaktischParallaxExtension();
     }
 }
+/*
+ * Fatal error: Declaration of Hypergalaktisch\ParallaxBundle\HypergalaktischParallaxBundle::getContain
+ * erExtension()
+ *  must be compatible with Symfony\Component\HttpKernel\Bundle\AbstractBundle::getContainerExtension(): ?Symfony\Component\DependencyInjection\Extension\ExtensionInterface in /var/www/vanillaC5/vendor/hypergalaktisch/contao-parallax/src/HypergalaktischParallaxBundle.php on line 40
+ */
