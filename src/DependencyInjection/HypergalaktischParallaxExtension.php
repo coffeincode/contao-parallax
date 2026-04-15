@@ -9,9 +9,9 @@
 
 namespace Hypergalaktisch\ParallaxBundle\DependencyInjection;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 class HypergalaktischParallaxExtension extends Extension
@@ -19,11 +19,11 @@ class HypergalaktischParallaxExtension extends Extension
     /**
      * {@inheritdoc}
      */
-    public function load(array $mergedConfig, ContainerBuilder $container)
+    public function load(array $mergedConfig, ContainerBuilder $container): void
     {
         $loader = new YamlFileLoader(
-            $container, new FileLocator(__DIR__ . '/../Resources/config')
+            $container, new FileLocator(__DIR__ . '/../../config')
         );
-        $loader->load('listener.yml');
+        $loader->load('services.yaml');
     }
 }

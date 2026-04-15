@@ -10,6 +10,8 @@
 namespace Hypergalaktisch\ParallaxBundle\EventListener;
 
 use Contao\CoreBundle\Framework\ContaoFrameworkInterface;
+use Contao\FilesModel;
+use Contao\StringUtil;
 
 class HookListener
 {
@@ -32,7 +34,7 @@ class HookListener
     {
         // Add an parallax background image
         if ($objTemplate->xlParallaxAddImage && $objTemplate->xlParallaxSingleSRC != '') {
-            $objModel = \FilesModel::findByUuid($objTemplate->xlParallaxSingleSRC);
+            $objModel = FilesModel::findByUuid($objTemplate->xlParallaxSingleSRC);
 
             if ($objModel !== null && is_file(TL_ROOT . '/' . $objModel->path)) {
 
@@ -40,7 +42,7 @@ class HookListener
 
                 // Override the default image size
                 if ($objTemplate->xlParallaxSize != '') {
-                    $size = \StringUtil::deserialize($objTemplate->xlParallaxSize);
+                    $size = StringUtil::deserialize($objTemplate->xlParallaxSize);
 
                     if ($size[0] > 0 || $size[1] > 0 || is_numeric($size[2])) {
                         $objTemplate->parallaxSingleSRC = \Image::create($objModel->path, $size)->executeResize()->getResizedPath();
@@ -48,7 +50,7 @@ class HookListener
                 }
 
                 // Parallax Options
-                $position = deserialize($arrData['xlParallaxPosition']);
+                $position = StringUtil::deserialize($arrData['xlParallaxPosition']);
                 $objTemplate->parallaxPosition = array("x" => $position[0], "y" => $position[1]);
                 $objTemplate->parallaxBleed = $arrData['xlParallaxBleed'];
             }

@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+Hypergalaktisch\ContaoParallaxBundle\:
+  resource: '../src/*'
+  exclude: '../src/{ContaoManager,DependencyInjection,Entity,Migrations,Tests,Kernel.php, HypergalaktischContaoParallaxBundle.php}'
+
+Hypergalaktisch\ParallaxBundle\EventListener\HookListener:
+  tags:
+    - { name: contao.hook, hook: parseArticle }

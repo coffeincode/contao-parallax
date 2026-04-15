@@ -10,15 +10,16 @@
 namespace Hypergalaktisch\ParallaxBundle;
 
 use Hypergalaktisch\ParallaxBundle\DependencyInjection\HypergalaktischParallaxExtension;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 /**
  * Configures the Contao parallax bundle.
  *
  * @author Georg Jaedicke
  */
-class HypergalaktischParallaxBundle extends Bundle
+class HypergalaktischParallaxBundle extends AbstractBundle
 {
     /**
      * Builds the bundle.

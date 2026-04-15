@@ -9,10 +9,15 @@
 
 namespace Hypergalaktisch\ParallaxBundle\ContaoManager;
 
-use Hypergalaktisch\ParallaxBundle\HypergalaktischParallaxBundle;
-use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
+
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
+use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
+use Contao\CoreBundle\ContaoCoreBundle;
+use Hypergalaktisch\ParallaxBundle\HypergalaktischParallaxBundle;
+
+
+
 
 /**
  * Plugin for the Contao Manager.
@@ -24,11 +29,10 @@ class Plugin implements BundlePluginInterface
     /**
      * {@inheritdoc}
      */
-    public function getBundles(ParserInterface $parser)
-    {
+    public function getBundles(ParserInterface $parser): array   {
         return [
             BundleConfig::create(HypergalaktischParallaxBundle::class)
-                ->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'])
+                ->setLoadAfter([ContaoCoreBundle::class])
         ];
     }
 }
