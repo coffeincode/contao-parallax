@@ -9,4 +9,5 @@ services:
 
   Hypergalaktisch\ParallaxBundle\EventListener\HookListener:
     tags:
-      - { name: contao.hook, hook: parseArticle }
+      - { name: contao.hook, hook: parseArticle, method: compileArticle }
+      - { name: contao.hook, hook: parseTemplate, method: parseTemplate }
