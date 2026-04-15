@@ -9,9 +9,8 @@
 
 namespace Hypergalaktisch\ParallaxBundle;
 
-use Hypergalaktisch\ParallaxBundle\DependencyInjection\HypergalaktischParallaxExtension;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 /**
@@ -21,29 +20,8 @@ use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
  */
 class HypergalaktischParallaxBundle extends AbstractBundle
 {
-    /**
-     * Builds the bundle.
-     *
-     * It is only ever called once when the cache is empty.
-     *
-     * This method can be overridden to register compilation passes,
-     * other extensions, ...
-     *
-     * @param ContainerBuilder $container A ContainerBuilder instance
-     */
-    public function build(ContainerBuilder $container)
+    public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
-    }
-    /**
-     * {@inheritdoc}
-     */
-    public function getContainerExtension()
-    {
-        return new HypergalaktischParallaxExtension();
+        $container->import('../config/services.yaml');
     }
 }
-/*
- * Fatal error: Declaration of Hypergalaktisch\ParallaxBundle\HypergalaktischParallaxBundle::getContain
- * erExtension()
- *  must be compatible with Symfony\Component\HttpKernel\Bundle\AbstractBundle::getContainerExtension(): ?Symfony\Component\DependencyInjection\Extension\ExtensionInterface in /var/www/vanillaC5/vendor/hypergalaktisch/contao-parallax/src/HypergalaktischParallaxBundle.php on line 40
- */
